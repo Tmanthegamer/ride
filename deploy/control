@@ -1,0 +1,8 @@
+Package: ride-ide
+Version: 1.0-ubuntu
+Section: misc
+Maintainer: Tyler Trepanier <tmanthegamer@gmail.com>
+Priority: optional
+Architecture: i386
+Description: Package configuration for RIDE
+
