@@ -18,7 +18,7 @@ RIDE is a prototype platform that has the basic text functionality of:
 (Save / Save As)    -Saving a File 
 (Open)              -Opening a File and displaying its contents onto 
                      the scintilla text surface 
-(New File)          -Creation a new blank scintilla text surface.  
+(New File)          -Creation a new blank scintilla text surface.
 (Zoom In/Out)       -Zoom in and out functionality 
 (Undo/Redo)         -Undo or Redo an action 
 (License)           -Displaying the Open Source License Agreement 
@@ -30,17 +30,17 @@ and RIX error detection every time you hit the `enter` or `return` key.
 
 Dependencies
 ============
--Qt 5.6       (built with Qt 5.6.0,)    
+-Qt 5.6       (built with Qt 5.6.0,)
     [http://www.qt.io/]
     
 -Qt Creator   (QtCreator v3 was used to build this project)
     [http://www.qt.io/] 
 
--QScintilla   (built with QScintilla2)  
+-QScintilla   (built with QScintilla2)
     [https://www.riverbankcomputing.com/software/qscintilla/download]
     
 -Rix Programming Language
-    [https://github.com/riolet/rix]    
+    [https://github.com/riolet/rix]
 
 Get Started with Ubuntu
 ================================================================
@@ -52,14 +52,39 @@ Get Started with Ubuntu
         Note: The standard installed version of qmake does not work,
               you have to use the Qt 5.6 version of qmake (refer to
               the known issues for instructions on how to do this).
-5.  sudo apt-get install libgl1-mesa-dev
-6.  clone from the git repository [https://github.com/riolet/rix]
-7.  follow the Rix installation instructions
-8.  Copy these files into your Rix folder
-       `rix`      <-- Used to compile your Rix files.  
-       `paths.sh` <-- Used to link the copied rix file and compile
-9.  Execute the paths.sh file with the command:
-        $. paths.sh
+5.  Install the require library
+  
+  ```bash
+  sudo apt-get install libgl1-mesa-dev
+  ```
+
+6.  Clone rix compiler version #905e7be from the git repository [https://github.com/riolet/rix]. We want to use this version because at the moment, ride is only compatible with this version of the compiler.
+  
+  ```bash
+  git clone https://github.com/riolet/rix.git
+  cd rix
+  git checkout 905e7be
+  ```
+  
+7.  From inside ride folder, copy these files into the new rix folder
+  
+  ```
+  rix       ## Used to compile your Rix files.
+  paths.sh  ## Used to link the copied rix file and compile
+  ```
+  
+8.  Now we get into folder rix, edit the compiler path in line 3, file `rix/rix` that we copy above
+
+  ```sh
+  export RIX_HOME=/path/to/your/rix/folder
+    ```
+
+9. Execute the paths.sh file with the command:
+
+  ```bash
+  sudo chmod +x paths.sh
+  sudo ./paths.sh
+  ```
 
 Team
 ====
